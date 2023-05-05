@@ -3,16 +3,16 @@
 
 We have 4 files:
 
-1. Visualization
+1. Visualization<br>
 It includes visualization and preprocessing  for the dataset. It includes visualization of quantity sales, profits and per different US states and regions.
 
-2. Predict sales and profits
+2. Predict sales and profits<br>
 Includes prediction of quantity sold using Linear regression that uses MAPE.
 
-3. Profit using Neural Nets
+3. Profit using Neural Nets<br>
 Includes predicted profits using Deep Neural Network.
 
-4. review Sentiment Analysis
+4. review Sentiment Analysis<br>
 Added Sentimental Analysis of the Customer reviews and feedback and predictions for the product reaction for new product.
 
 
