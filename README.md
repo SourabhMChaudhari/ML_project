@@ -21,8 +21,8 @@ Dataset used: https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/
 
 Authors:
 
-Sourabh Chaudhari  <schaudh9@uncc.edu>
-Mansi Akbari  <makbari2@uncc.edu>
-Pallavi Deshmukh  <pdeshmu5@uncc.edu>
-Archit Reddy Dasari  <adasari3@uncc.edu>
+Sourabh Chaudhari  <schaudh9@uncc.edu><br>
+Mansi Akbari  <makbari2@uncc.edu><br>
+Pallavi Deshmukh  <pdeshmu5@uncc.edu><br>
+Archit Reddy Dasari  <adasari3@uncc.edu><br>
 Kunal Andela  <kandela@uncc.edu>
