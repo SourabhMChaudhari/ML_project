@@ -1,0 +1,392 @@
+
+\documentclass[10pt]{article}
+\usepackage{times}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=0.5in, paperwidth=33pc, paperheight=54pc]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{mfirstuc}
+\usepackage{hyperref}
+
+% Set font and spacing
+\renewcommand{\rmdefault}{ptm}
+\setstretch{1.1}
+\setlength{\parskip}{11pt} % set vertical spacing to 11 points
+\setlength{\parindent}{0pt}
+
+% Set title format
+\titleformat{\section}[block]{\bfseries\filcenter}{\thesection}{1em}{\MakeUppercase}
+\titlespacing{\section}{0pt}{1em}{1em}
+
+\titleformat{\subsection}[block]{\bfseries}{\thesubsection}{1em}{\makefirstuc}
+\titlespacing{\subsection}{0pt}{1em}{1em}
+
+\titleformat{\subsubsection}[block]{\bfseries}{\thetitle}{1em}{\titlecase}
+\titlespacing{\subsubsection}{0pt}{0.5em}{0.25em}
+
+\titleformat{\paragraph}[runin]{\bfseries}{\theparagraph}{1em}{}[\hspace{1em}]
+
+% Set title style(heading)
+\newcommand{\mytitle}[1]{\begingroup
+\centering
+\Large\bfseries\uppercase{#1}
+\par\vspace{0.5\baselineskip}
+\hrule height 4pt
+\par\vspace{0.25\baselineskip}
+\hrule height 1pt
+\par\vspace{0.25\baselineskip}
+\vspace{0.5\baselineskip}
+\endgroup}
+
+
+% Begin document
+\begin{document}
+
+% Set page size and margins
+\newgeometry{top=0.5in, bottom=1in, left=0.5in, right=0.5in}
+
+% Set font and spacing
+\renewcommand{\rmdefault}{ptm}
+\setstretch{1}
+\setlength{\parskip}{1pt}
+\setlength{\parindent}{0pt}
+
+% Set title
+\mytitle{Sales Analysis and forecasting}
+
+
+%Team Members Name
+
+\textbf{Group2 : Sales Analysis and Forecasting}\\
+Sourabh Chaudhari\\
+Pallavi Deshmukh\\
+Mansi Akbari\\
+Kunal Andela\\
+Archith Reddy Dasari\\
+
+%Provide GitHub Link Here
+
+\textbf{Github link for source code:}
+
+\url{https://github.com/SourabhMChaudhari/ML_project}
+
+% Start numbering pages
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Start content
+\section{Introduction}
+\paragraph{}
+Sales analysis and forecasting is the process of analyzing sales data to gain insights and predict future sales trends. In business, this information is used to make informed decisions regarding inventory, production, and marketing strategies. Identifying the demand for particular products in various regions could help alter the supply, reducing transportation costs and improving sales efficiency. Online as well as retail sellers tried to identify the demand for products beforehand by using forecasting methods to ensure the supply is aligned with the potential demand. Machine learning algorithms are widely used in identifying trends in the dataset, determining future trends of any variable using existing data, and classifying the dataset based on existing patterns. Applying machine learning algorithms to sales data has the potential to automate analysis and forecasting, allowing businesses to make more accurate predictions and optimize their operations. On the other side, buyers are generally interested in identifying the product’s performance based on reviews provided by other users.
+\paragraph{}
+For everyday household products such as groceries, almost all the products available in the market have plenty of reviews posted by existing users, indicating whether the product is worth buying. However, while buying common grocery items, it is time-consuming for users to go through all the posted reviews, forcing them to rely on product ratings. Sentimental analysis using machine learning algorithms has the potential to classify products based on user sentiments in various categories, making it easier for buyers to decide whether to buy a particular product or not. A sales analysis and forecasting project aims to develop a model that can accurately predict future sales trends and provide insights to improve sellers' performance. It also aims to classify products based on user sentiments in various categories, allowing users to quickly glance at the overall review of the product before making a purchase.
+
+
+\subsection{Problem statement}
+\paragraph{}
+Superstore owners and online sellers must accurately identify the demand for particular products in advance to adjust their production or import accordingly. Ignoring the demands of the targeted audience may lead to decreased profit for both online sellers and superstore owners. It is imperative to consider the demands of the consumers to optimize the production process and offer products that match their needs. Failing to consider demands in different regions may result in an imbalance between regional demand and supply, which can negatively affect the profits of the owners of superstores and online sellers. To maximize profits, it is crucial to be aware of the changing demands of customers and adjust production and import processes accordingly. Another problem sellers face is the difficulty adjusting the discount rate for particular products. Adjusting the discount rate can help balance the supply and demand for a particular product and maximize profits. Therefore, accurate sales analysis and forecasting using machine learning algorithms can help to identify the demand for specific products and allow sellers to adjust their strategies to optimize profits. 
+\paragraph{}
+For buyers, plenty of options are available for any common grocery product in the online and retail market. To decide which product to buy, users can look at the reviews provided by existing users. However, it is often time-consuming for them to go through all the reviews, potentially forcing them to rely on the star ratings of the products. In addition, looking at some of the reviews, which are positive or negative, and ignoring others due to time constraints may not provide a good idea to the users about a particular product. Therefore, classifying products into positive, negative, and neutral categories based on all the reviews by conducting sentimental analysis using a machine learning algorithm has the potential to provide users with a quick option to decide on any purchase.
+
+
+\subsection{Motivation}
+\paragraph{}
+To ensure better supply and avoid stockouts, owners of superstores and online platforms need to predict the future demand for specific products. However, the demand for different products and brands varies, making accurate sales forecasting challenging. To tackle this challenge, identifying the targeted audience of the product and forecasting sales for future demand of products in particular regions can help in advertising products effectively. Unfortunately, there are minimal reported studies on applying advanced machine learning algorithms to identify sales of products in targeted regions. The lack of knowledge makes it difficult for owners to make informed inventory and supply chain management decisions. By identifying the sales of a particular product in advance and determining their demand by region or type of customers, owners can improve supply efficiency and optimize their operations. The forecasted sales data can be used to tailor the production and import of specific products, ensuring that the supply meets the demand and maximizing profits. Therefore, applying advanced machine learning algorithms to sales forecasting can significantly impact the success of superstore owners and online sellers, improving efficiency and increasing profits.
+\paragraph{}
+In the case of buyers, sentimental analysis using reviews of particular products to classify them into various categories provides users with an option to make quick decisions before buying any product. The classification of products based on reviews has the potential to provide a clearer idea about the product since reviews are generally provided by buyers and are detailed compared to ratings, which are scaled from one to five stars. Regarding product ratings, sometimes it is also hard to decide which product to buy due to similar ratings of multiple options, making users rely on the reviews. Therefore, conducting sentimental analysis to classify products in positive, negative, and neutral categories could provide an option to the users on which they can rely in addition to star ratings. 
+
+
+\subsection{Review of existing studies }
+\paragraph{}
+Predicting sales of particular products plays a vital role in growing the sale of any product and ensuring an efficient supply of resources (Mentzer and Moon, 2004). In the past, several researchers attempted to use machine learning techniques for forecasting. However, very few studies are reported on forecasting sales of particular products by region. The article ”Prediction of Sales Value in Online Shopping using Linear Regression” uses a straightforward approach using linear regression to make predictions about sales (Gopalakrishnan et al., 2018). In the article “Machine-Learning Models for Sales Time Series Forecasting,” authors attempted to predict sales considering historical data of “Rossmann stores” using the random forest algorithm (Pavlyshenko, 2019). The results showed that regression analysis provides better results compared to time series analysis. However, the forecast was not for different regions, resulting in poor accuracy of the estimates. For our sales analysis and forecasting project, we plan to use both linear regression and decision trees to make predictions.
+\paragraph{}
+The article ”Sentiment Analysis of Customer for E-commerce by Applying AI” proposes a solution for predicting consumer insights on a particular product using a customized RNN for user-specific perception analysis on social media and machine learning models such as Random Forest, Naive Bayes, and BayesNet (Aftab et al., 2021). However, the approach has limitations as it only predicts consumer attitude regarding retention of the product marketing and does not factor in potential changes in demand for different products in the future. The article “A Survey on Sentimental Analysis and Option Mining” highlighted the application of a machine learning algorithm to classify user text reviews to enhance product sales and improve customer satisfaction (Varghese and Jayashree, 2013). The results showed that the application of a machine learning algorithm for sentimental analysis has the potential to automate the process of manually reviewing a large number of reviews for particular products.
+
+\subsection{Open question in the domain}
+• What are the predicted sales for the particular product if it matches with the attributes segment,
+category, quantity ? \\
+• Which products have got the least sales ? \\
+• What are the conditions where we observe maximum profits? \\
+• Do we need to increase discounts for any other products ?
+
+\subsection{Our approach}
+\paragraph{}
+Data Collection: To build a single dataset for analysis, the data may need to be cleansed, converted, or integrated from several sources such as databases, APIs, or web scraping. We have used the \texttt{aws\_review.csv} data because it is pertinent to the project.
+
+\paragraph{}
+
+Data Preprocessing: Preprocessing is the process of preparing data for analysis by cleaning, converting, and formatting it. Tasks like deleting duplicates, adding missing data, scaling or normalizing features, or encoding categorical variables could be necessary.
+\paragraph{}
+
+Data Visualization: Data patterns, correlations, and outliers or anomalies can all be highlighted using visualization approaches. The model selection and feature engineering processes can be improved by using visualization tools like scatter plots, histograms, or heat maps.
+\paragraph{}
+
+Algorithm Implementation: After gathering, preprocessing, and visualizing the data, we have chosen and executed the best algorithm. For tasks involving classification or regression, for instance, neural networks may be employed, whereas modeling continuous data may be accomplished using linear regression. Machine learning models that have been trained on labeled data may be utilized for sentiment analysis.
+\paragraph{}
+
+Fine Tuning: To optimize the model's performance, multiple hyperparameters are adjusted, and the model is trained on various subsets of the data. Grid search and cross-validation are two methods that can be used to find the model's ideal parameters.
+\paragraph{}
+
+Results: Finally, other performance metrics, like as accuracy, precision, recall, or F1 score, can be used to assess how well the models perform. To convey the findings to stakeholders, the results may be displayed as charts, tables, or reports.
+
+\newpage
+\section{Background}
+\paragraph{}
+The ”Prediction of Sales Value in Online Shopping using Linear Regression” paper proposes a straightforward approach using linear regression to predict sales value in online shopping (Gopalakrishnan et al., 2018). We plan to use a combination of linear regression and decision trees to predict sales and analyze data for our sales analysis and forecasting project. Similarly, the paper “Machine-learning Models for Sales Time Series Forecasting” used time series and machine-learning approaches to predict sales (Pavlyshenko, 2019). Although the authors used the stacking technique, the results of the study were not promising considering the fact that the information about the region in which the product was sold was not considered in the analysis or predictions. Also, in the book “Sales forecasting management: a demand management approach,” the regression analysis does not include information about region-wise forecasts or user sentiments (Mentzer and Moon, 2004).
+\paragraph{}
+In the case of studies on user sentimental analysis, the paper “Sentiment Analysis of Customer for E-commerce by Applying AI” presents an approach to predict customer insights and their willingness to purchase a specific product (Aftab et al., 2021). This is achieved through two main models, a customized Recurrent Neural Network (RNN) for user-specific perception analysis on social media and a machine learning model that utilizes classification algorithms such as Random Forest, Naive Bayes, and BayesNet. While this approach takes into account data from finance, sales, marketing, and HR departments, it has several limitations. It focuses on anticipating consumer attitude towards the retention of the product marketing and does not implement user experience following product purchase. The model’s predictions are limited to highly advertised products and do not provide suggestions for underperforming products or consider potential future demand changes. In the study “A survey on sentiment analysis and opinion mining,” document-level, sentence-level, and phrase-level sentimental analysis are proposed in addition to the challenges while conducting sentimental analysis (Varghese and Jayashree, 2013). Although the challenges and methodology to conduct analysis are briefly described, the application of techniques is not shown for classifying user sentiments using the application of machine learning algorithms. 
+\paragraph{}
+
+Although several researchers in the past attempted to forecast sales, no studies are showing the application of machine learning algorithms to forecast sales for various regions and identify the most profitable products along with a comparison of discount rates and sales. In addition, sentimental analysis to classify reviews of different products into positive, negative, and neutral categories using machine learning algorithms was also not attempted in the past. This study attempts to bridge the gap between existing research by attempting to forecast sales in different regions and establishing the relationship between the discount rate and sales along with sentimental analysis of user reviews for various products to classify products into different categories.
+
+\newpage
+\section{Methods}
+\paragraph{}
+Figure to explain how this projects works
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{method_diagram}
+  \caption{Project Working}
+  \label{fig:sample}
+\end{figure}
+
+\paragraph{}
+Details of Algorithm and methods:
+
+\subsection{Sentiment analysis reviews}
+\paragraph{}
+Using the SentimentIntensityAnalyzer class from the nltk.sentiment library to calculate the sentiment of each product review and assign it to a new 'reaction' column in the data frame.
+Splitting the data into training and testing sets, creating a TF-IDF vectorizer to convert the product titles into numerical feature vectors, and training an SVM classifier on the training data.Using the trained classifier to predict the sentiment of a sample product name.
+\subsection{Observing Profits using Neural Networks}
+\paragraph{}
+The code reads the data from the aws review.csv file, drops the missing values. It scales the features using the StandardScaler.
+The code builds a sequential model using Keras with three dense layers. The first two layers have 16 and 8 neurons, respectively, and use the 'relu' activation function. The output layer has a single neuron and uses the 'linear' activation function. The model is compiled using the 'mse' loss function, 'adam' optimizer, and 'mae' metric.
+Model training: The code trains the model using the fit() method of the model object. It uses the training data and validation data for training the model. The model is trained for 100 epochs with a batch size of 32.
+The code evaluates the performance of the trained model using the history object returned by the fit() method. It also prints the learned weights for each feature in the input layer of the model using the get weights() method.
+
+\subsection{Predicting Sales Using Linear Regression}
+\paragraph{}
+The code performs a linear regression model to predict the quantity sold of a new product. It first selects relevant features (star rating, verified purchase, product category, isvine, price, cost, profit and scales the numerical variables using MinMaxScaler. Then, it splits the data into training and testing sets and fits a linear regression model using the Least Mean Squares (LMS) algorithm. It then predicts the quantity sold of a new product with the fitted model by encoding categorical variables using LabelEncoder and removing the original features. Finally, it prints the predicted quantity sold and the top 10 most profitable products from the original dataset.
+
+Additionally, it defines a function mape to compute the Mean Absolute Percentage Error (MAPE) between the predicted and true values. The MAPE value is calculated for the testing set and printed.
+
+\subsection{Used K-Mean for clustering to count sales per states}
+\paragraph{}
+The code  performs clustering analysis on sales data grouped by state using K-means algorithm. Here is a brief explanation of what the code does:
+The code extracts the two features of interest, state and quantity sold, from the original dataset using pandas.
+Then it converts the 'state' column into categorical data using pandas.Categorical.codes method. This is necessary because K-means only works with numerical data.
+Next, the code groups the data by state and calculates the total quantity sold in each state using pandas.
+After that, the sales data is scaled using the StandardScaler from scikit-learn to make sure that the values are standardized and in the same range.
+The K-means algorithm is then used to cluster the sales data using the scaled sales and state data. The number of clusters used in the algorithm is not shown in the code.
+Finally, the code adds the cluster labels obtained from the K-means algorithm to the state sales DataFrame, and prints the count of states in each cluster and the state sales DataFrame.
+The output of the code shows the number of states in each cluster, as well as the original sales data grouped by state, the scaled sales data, and the cluster labels obtained from the K-means algorithm. The cluster labels help in identifying groups of states with similar sales patterns.
+Then code generates a choropleth map of the United States based on the quantity of items sold in each state.
+First, it extracts the sales data by grouping the data frame by state and summing the quantity sold column. It then creates a new data frame with a unique list of states, and merges the sales data into it.
+Next, it loads a shape file of the United States using geopandas and merges the sales data into it based on the state names. It then uses matplotlib to plot the map with the quantity of sales as the color scheme.
+Finally, it adds state names and sales numbers to the map using the centroid of each state's geometry. The xlim and ylim functions limit the plot to only show the contiguous United States, and the plt.title function adds a title to the plot.
+
+\newpage
+\section{Experiments}
+\subsection{Dataset Visualization}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{data1}
+  \caption{Dataset visualization}
+  \label{fig:sample}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{data2}
+  \caption{Number of reviews by state}
+  \label{fig:sample}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{d3}
+  \caption{Number of reviews by Region}
+  \label{fig:sample}
+\end{figure}
+\subsection{Sentiment Analysis}
+\paragraph{}
+Using the trained classifier to predict the sentiment of a sample product name.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{aaaa}
+  \caption{Predicted reaction}
+  \label{fig:sample}
+\end{figure}
+
+\subsection{Observing Profits using Neural Networks}
+\paragraph{}
+To observe the specific conditions where profits are observed, we can look at the weights learned by the neural network for each feature.We can see that the most important feature for predicting profits is the price, followed by the quantity sold and Vine program participation. We can interpret this to mean that higher prices and more items sold lead to higher profits, and being part of the Vine program also has a positive effect on profits. On the other hand, higher costs lead to lower profits. The other features have relatively lower importance and can be ignored for the purpose of predicting profits.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{lr}
+  \caption{Observing Profits}
+  \label{fig:sample}
+\end{figure}
+
+\subsection{Predicting Sales Using Linear Regression}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{mape}
+  \caption{Mape value}
+  \label{fig:sample}
+\end{figure}
+\paragraph{}
+The code defines a function \texttt{mape} that calculates the mean absolute percentage error between two arrays $y_{true}$ and $y_{pred}$. The formula for calculating MAPE is $\frac{1}{n} \sum\limits_{i=1}^{n} \left| \frac{y_{true,i} - y_{pred,i}}{y_{true,i}} \right| \times 100$, where $n$ is the number of observations. The MAPE value is a measure of the accuracy of the predictive model.
+
+After defining the mape function, the code calculates the MAPE of the model using the test set and the predicted values . The MAPE value is printed to the console using the print function. The MAPE value represents the average percentage difference between the true values and the predicted values. MAPE value indicates higher accuracy of the predictive model.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{mape3}
+  \label{fig:sample}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{mape2}
+  \caption{Predicting sales of a sample product}
+  \label{fig:sample}
+\end{figure}
+\paragraph{}
+The makes a prediction for the quantity sold of the new product using the previously trained linear regression model (lr). The predicted quantity sold is printed.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{sale1}
+  \caption{Predicted reaction}
+  \label{fig:sample}
+\end{figure}
+\paragraph{}
+prints the top 10 most profitable products, showing the product title and profit.
+
+\subsection{Used K-Mean for clustering to count sales per states}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{avx}
+  \caption{Sales per state}
+  \label{fig:sample}
+\end{figure}
+
+\paragraph{}
+The K-means algorithm is then used to cluster the sales data using the scaled sales and state data.
+Finally, the code adds the cluster labels obtained from the K-means algorithm to the state sales DataFrame, and prints the count of states in each cluster.
+
+\subsection{Highlight on map segment as per profits and sales both}
+\paragraph{}
+Number of sales per state
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{sales2}
+  \caption{Number sales by states}
+  \label{fig:sample}
+\end{figure}
+
+\paragraph{}
+Profits by states
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{sale3}
+  \caption{Profits by states}
+  \label{fig:sample}
+\end{figure}
+
+\subsection{Graphical representation of sales, discounts, and profits per year:}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{12}
+  \caption{Sales and profit per year}
+  \label{fig:sample}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{dis}
+  \caption{Discount Per year}
+  \label{fig:sample}
+\end{figure}
+\paragraph{}
+The first plot is a figure with two subplots for sales and profits. The top subplot shows the total sales per year plotted against the year, where the sales values are represented in blue color. The bottom subplot shows the total profits per year plotted against the year, where the profit values are represented in green color.
+\paragraph{}
+The second plot is a figure with only one subplot, showing the total discounts given per year plotted against the year, where the discount values are represented in green color.
+\paragraph{}
+All three plots have a common x-axis, which is the year, and y-axis showing the respective metric being plotted. These plots can help understand the trends in sales, profits, and discounts given over the years. The first plot shows how sales and profits have varied over the years and whether they have any correlation. The second plot shows the trend in discounts given per year and whether they are impacting the profits. Overall, these plots provide a good overview of the business performance over the years.
+
+\newpage
+\paragraph{}
+\subsection{Team efforts,}\\
+
+Earlier we had implemented data visualization, preprocessing and linear regression on the superstore dataset but later we got request to add sentimental analysis and make predictions, where we needed to search for dataset that has customer feedback reviews. So we reimplemented all the algorithms and sentimental analysis on new dataset.
+
+\newpage
+\section{Reflections}
+\paragraph{}
+The proposed analysis was asked to be modified, and the instructor suggested the addition of sentimental analysis.
+We modified the analysis plan as well as the data set and made following changes:
+
+\begin{itemize}
+\item Obtained new data with user reviews on each product.
+\item Proposed sentimental analysis using both the ratings for each product and user testimonials.
+\item The techniques for the study were reevaluated, and an algorithm was added to extract keywords from user reviews and determine if the reviews' authors had positive or negative intentions for the product.
+\end{itemize}
+
+\newpage
+\section{Problems faced due to change in team size}
+\begin{itemize}
+\item We originally had several difficulties as a result of the shift in team size because we had to work twice as hard to complete the remaining tasks.
+\item In order to continue working at the same pace, we had to reacquaint ourselves with everyone after another team merger.
+\end{itemize}
+
+
+\newpage
+\section{Conclusion}
+\paragraph{}
+Forecasting and analysis of sales are essential for companies to optimize operations and boost revenues. In order to generate insights for enhancing business performance, machine learning algorithms can be utilized to automate the analysis and forecasting process utilizing sales data. Creating a model that accurately forecasts future sales patterns and offers insights for streamlining inventory, production, and marketing tactics is the main objective of a sales analysis and forecasting project.
+\paragraph{}
+
+However, it is challenging for superstore owners and online sellers to make educated judgments about inventory and supply chain management due to the dearth of information and published studies on the application of powerful machine learning algorithms to sales forecasting. Our strategy comprises acquiring datasets from internet sources and preparing the data to address this. Then, we create a model that precisely forecasts future sales patterns using both regression and classification techniques.
+\paragraph{}
+
+We can spot patterns and trends in the data by applying machine learning algorithms that might not be obvious through conventional analysis techniques. As a result, we are able to produce insights that can assist firms in making better choices regarding their production, marketing, and inventory management plans. In the end, our strategy may result in improved operational efficiency, higher earnings, and a market edge.
+
+\newpage
+\section*{References}
+\begin{small}
+1. Raschka, S., \& Mirjalili, V. (2021). \textit{Python Machine Learning, Third Edition: From Linear Models to Deep Learning}. Packt Publishing.
+\\
+
+2. Ng, A. (2017). Machine Learning Yearning. [Online]. Available: \href{https://www.deeplearning.ai/machine-learning-yearning/}{Link}.\\
+
+3. Kim, M. (2021). Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems (2nd ed.). O'Reilly Media.\\
+
+4. Neural Networks for Pattern Recognition" by Christopher Bishop
+Link: \href{https://www.springer.com/gp/book/9780387947646}{Link}\\
+
+5. Introduction to Linear Regression Analysis" by Douglas C. Montgomery and Elizabeth A. Peck
+Link: \href{https://www.wiley.com/en-us/Introduction+to+Linear+Regression+Analysis%2C+5th+Edition-p-9780470542811}{Link}
+\\
+
+6. "Introduction to Data Mining" by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar
+Link: \href{https://www-users.cs.umn.edu/~kumar/dmbook/index.php}{Link}\\
+
+
+7. Mentzer, J. T., \& Moon, M. A. (2004). \textit{Sales forecasting management: a demand management approach}. Sage Publications.\href{https://books.google.com/books?hl=en\&lr=\&id=ZchyAwAAQBAJ\&oi=fnd\&pg=PP1\&ots=1XnuObhUza\&sig=uSiQnA_toI4cnGfy_PxrcqOTYqk\#v=onepage\&q\&f=false}{Link}
+
+
+8. Gopalakrishnan, T., Choudhary, R., \& Prasad, S. (2018, December). Prediction of sales value in online shopping using linear regression. In \textit{2018 4th International Conference on Computing Communication and Automation (ICCCA)} (pp. 1-6). IEEE.
+ \href{https://ieeexplore.ieee.org/abstract/document/8777620}{Link} \\
+
+9. Pavlyshenko, B. M. (2019). Machine-learning models for sales time series forecasting. Data, 4(1), 15. \href{https://www.mdpi.com/2306-5729/4/1/15}{Link} \\
+
+10.	Aftab, M. O., Ahmad, U., Khalid, S., Saud, A., Hassan, A., \& Farooq, M. S. (2021, November). Sentiment analysis of customer for ecommerce by applying AI. In \textit{2021 International Conference on Innovative Computing (ICIC)} (pp. 1-7). IEEE.
+\href{https://ieeexplore.ieee.org/abstract/document/9693026}{Link} \\
+
+11.	Varghese, R., \& Jayasree, M. (2013). A survey on sentiment analysis and opinion mining. \textit{International journal of Research in engineering and technology}, 2(11), 312-317.
+\href{https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=6c56554f3dac94b5170200580d924de2f15074fc}{Link}
+
+
+\end{small} 
+
+
+\end{document}
